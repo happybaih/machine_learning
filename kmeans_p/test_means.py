@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 """
- @Time: 2017/9/27 10:16
+ @Time: 2017/11/9 11:44
  @Author: sunxiang
 """
 
-t = 123
-
-print t**2

@@ -9,15 +9,25 @@ import operator
 import numpy as np
 
 
-def data_ready():
-    ''' 数据读入 '''
+def data_ready(filename, rankcout):
     data = []
     labels = []
-    with open("data.txt") as ifile:
+    with open(filename) as ifile:
         for line in ifile:
             try:
                 tokens = line.strip().split(' ')
                 data.append([float(tk) for tk in tokens[:-1]])
+
+                # 0 的数据去除 效果好点
+                # flag = True
+                # one = list()
+                # for tk in tokens[:-1]:
+                #     if int(tk) == 0 or tk == '0':
+                #         flag = False
+                #     one.append(float(tk))
+                # if flag:
+                #     data.append(one)
+
                 labels.append(tokens[-1])
             except:
                 print line
@@ -26,8 +36,10 @@ def data_ready():
     y = np.zeros(labels.shape)
 
     ''''' 标签转换为0/1 '''
-    y[labels == 'A'] = 1
-    return x , y
+    # y[labels == '1'] = 1
+    for i in range(1, rankcout + 1):
+        y[labels == str(i)] = i
+    return x, y
 
 
 # 给出训练数据以及对应的类别
@@ -35,7 +47,6 @@ def createDataSet():
     # group = array([[1.0, 2.0], [1.2, 0.1], [0.1, 1.4], [0.3, 3.5]])
     # labels = ['A', 'A', 'B', 'B']
     # return group, labels
-
     return data_ready()
 
 

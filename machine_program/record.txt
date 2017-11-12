@@ -1,0 +1,27 @@
+v_comment_count
+
+v_monthly_sales
+
+v_price
+
+red_words_length
+
+red_words_number   2
+
+v_num_sales
+
+
+备注  red_words_number   2    排名靠前
+        v_comment_count  0   排名异常
+
+
+        评论 远大于 销量（。。）
+
+        v_num_sales  ?  都是 0
+
+
+        tmall_views_2  id  20850   1  0
+                    id 20785
+
+
+
